@@ -55,10 +55,9 @@
 .leaflet-control-layers {
   z-index: 2000;
   position: relative;
-  zoom: 0.5;
+ zoom: 0.667;
   transform-origin: top left;
 }
-
 
 .modal {
     display: none;
@@ -67,49 +66,43 @@
     left: 50%;
     transform: translate(-50%, -50%) scale(0.95);
     background: #252b36;
-    padding: 10px 12px;
-    border-radius: 7px;
+    padding: 13.3px 16px; /* 10px*1.333, 12px*1.333 */
+    border-radius: 9.3px; /* 7px*1.333 */
     z-index: 1001;
-    max-width: 180px;
+    max-width: 240px; /* 180px*1.333 */
     width: 90%;
     transition: all 0.35s ease;
     color: #f0f0f0;
     font-family: 'Segoe UI', sans-serif;
-    font-size: 7px;
+    font-size: 9.3px; /* 7px*1.333 */
 }
 
 .modal h2 {
-    font-size: 11px;
+    font-size: 14.7px; /* 11px*1.333 */
     color: #ffffff;
-    margin-bottom: 8px;
+    margin-bottom: 10.7px; /* 8px*1.333 */
     text-align: center;
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 4px 5px;
-    font-size: 7px;
+    padding: 5.3px 6.7px; /* 4px*1.333, 5px*1.333 */
+    font-size: 9.3px; /* 7px*1.333 */
     background-color: #1e232c;
     color: #ffffff;
-    border-radius: 4px;
-    border: 1px solid #3a4152;
-}
-
-input[type="text"]:focus {
-    border-color: #4a90e2;
-    background-color: #252b36;
-    outline: none;
+    border-radius: 5.3px; /* 4px*1.333 */
+    border: 1.3px solid #3a4152; /* 1px*1.333 */
 }
 
 .modal-button {
     width: 100%;
-    padding: 6px;
-    font-size: 7.5px;
-    margin-top: 10px;
+    padding: 8px; /* 6px*1.333 */
+    font-size: 10px; /* 7.5px*1.333 */
+    margin-top: 13.3px; /* 10px*1.333 */
     background-color: #4674dc;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5.3px; /* 4px*1.333 */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -123,7 +116,7 @@ input[type="text"]:focus {
     background-color: rgba(21, 24, 30, 0.85);
     z-index: 1000;
     display: none;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(5.3px); /* 4px*1.333 */
 }
 
 .modal.show {
@@ -140,6 +133,7 @@ input[type="text"]:focus {
         filter: var(--map-tiles-filter, none);
     }
 }
+
 
 .modal-button:hover {
     background-color: #6088e7;
@@ -214,6 +208,7 @@ input[type="text"]:focus {
             font-size: 6.5px;
             font-weight: 600;
             font-family: 'Roboto', sans-serif;
+            opacity: 0;
  
         }
         .rls1-container {
@@ -260,22 +255,23 @@ input[type="text"]:focus {
     }
 }
 
-        /* Delete Button */
-      #deleteButton {
-    width: 18.5px;           /* 37 / 2 */
-    height: 16px;            /* 32 / 2 */
-    border-radius: 1px;      /* 2 / 2 */
+   /* Delete Button */
+#deleteButton {
+    width: 24.6px;           /* 18.5 * 1.333 */
+    height: 21.3px;          /* 16 * 1.333 */
+    border-radius: 1.3px;    /* 1 * 1.333 */
     background-color: rgb(101, 101, 101);
     color: rgb(130, 130, 130);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
-    font-size: 8px;          /* 16 / 2 */
-    box-shadow: 0 0.5px 2px rgba(0,0,0,0.3);  /* 0 1px 4px / 2 */
+    font-size: 10.7px;       /* 8 * 1.333 */
+    box-shadow: 0 0.67px 2.67px rgba(0,0,0,0.3);  /* 0 0.5 2 * 1.333 */
     border: none;
     cursor: pointer;
 }
+
 
         /* Smooth Transition for Modals */  
         .modal.show {
@@ -299,8 +295,8 @@ input[type="text"]:focus {
     white-space: nowrap;
 }
         .icon-container .icon {
-            width: 19px;
-            height: 19px;
+            width: 24px;
+            height: 24px;
             object-fit: cover;
             display: block;
         }
@@ -313,8 +309,8 @@ input[type="text"]:focus {
     white-space: nowrap; /* Убираем перенос текста */
 }
 .icon-container1 .icon {
-    width: 19px;   /* 34 / 2 */
-    height: 19px;  /* 34 / 2 */
+    width: 24px;   /* 34 / 2 */
+    height: 24px;  /* 34 / 2 */
     object-fit: cover;
     display: block;
 }
@@ -329,61 +325,68 @@ input[type="text"]:focus {
 
     .icon-container .icon,
     .icon-container1 .icon {
-        width: 20px;     /* чуть меньшие иконки */
+        width: 20x;     /* чуть меньшие иконки */
         height: 20px;
     }
 }
-        /* Modal Input Background for Target Coordinates */
-        #targetModal {
-            padding: 10px;
-            border-radius: 5px;
-        }
-        #alert-container {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 1000;
-        }
+    /* Modal Input Background for Target Coordinates */
+#targetModal {
+    padding: 13.3px;           /* 10px * 1.333 */
+    border-radius: 6.7px;      /* 5px * 1.333 */
+}
+
+#alert-container {
+    position: absolute;
+    top: 13.3px;               /* 10px * 1.333 */
+    left: 13.3px;              /* 10px * 1.333 */
+    z-index: 1000;
+}
+
 #alert-menu {
     background: #d2d2d2;
-    padding: 10px; /* было 20px */
+    padding: 13.3px;           /* 10px * 1.333 */
     display: none; /* Изначально скрыто */
     border: none;
-    width: 125px; /* было 250px */
-    height: 551.5px; /* было 1103px */
+    width: 166.7px;            /* 125px * 1.333 */
+    height: 735.3px;           /* 551.5px * 1.333 */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #000000;
-    font-size: 7px; /* было 14px */
+    font-size: 9.3px;          /* 7px * 1.333 */
     transition: all 0.3s ease;
     position: absolute;
 }
 
 #alert-menu:hover {
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 7.998px 26.66px rgba(0, 0, 0, 0.2); /* 6px*1.333, 20px*1.333 */
 }
+
 .leaflet-control-attribution {
     display: none !important;
 }
+
 #alert-menu h3 {
-    margin: 0 0 5px;         /* 0 0 10px / 2 */
+    margin: 0 0 6.7px;         /* 5px * 1.333 */
     text-align: center;
-    font-size: 8px;          /* 16px / 2 */
+    font-size: 10.7px;         /* 8px * 1.333 */
     color: #c4c4c4;
 }
+
 #alert-menu div {
-    margin-bottom: 2.5px;    /* 5px / 2 */
+    margin-bottom: 3.3px;      /* 2.5px * 1.333 */
 }
+
 #alert-menu input[type=checkbox] {
-    margin-right: 2.5px;     /* 5px / 2 */
+    margin-right: 3.3px;       /* 2.5px * 1.333 */
 }
+
 button#alert-button {
-    width: 17px;             /* 34px / 2 */
-    height: 17px;            /* 34px / 2 */
+    width: 22.7px;             /* 17px * 1.333 */
+    height: 22.7px;            /* 17px * 1.333 */
     border-radius: 50%;
     background-color: #50785D;
     color: rgb(0, 0, 0);
     font-weight: bold;
-    font-size: 6px;          /* 14px / 2 */
+    font-size: 8px;            /* 6px * 1.333 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -391,6 +394,7 @@ button#alert-button {
     border: none;
     cursor: pointer;
 }
+
 
     .overlay {
     position: absolute;
@@ -403,58 +407,55 @@ button#alert-button {
     background: url('kod.png') center/cover no-repeat;
     pointer-events: none; /* Позволяет кликам проходить сквозь */
     z-index: 2000; /* Поверх карты */
-    opacity: 0.2; /* Сделать картинку менее прозрачной */
+    opacity: 0.25; /* Сделать картинку менее прозрачной */
     transition: filter 0.3s ease; /* Плавный переход фильтра */
 }
 /* Кастомизация всплывающего окна */
 .leaflet-popup-content {
-    background-color: #f0f0f0; /* Светлый фон */
-    color: #333;               /* Темный цвет текста */
-    padding: 10px;
-    border-radius: 10px;       /* Скругленные углы */
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 13.3px;          /* 10*1.333 */
+    border-radius: 13.3px;    /* 10*1.333 */
     font-family: 'Arial', sans-serif;
-    font-size: 14px;
+    font-size: 18.7px;        /* 14*1.333 */
 }
 
-/* Стиль для стрелочки всплывающего окна */
 .leaflet-popup-tip {
     background-color: #f0f0f0;
 }
 
-.leaflet-popup-content-wrapper {
-    zoom: 0.5;
-}
-/* Стиль для заголовка в окне */
 .leaflet-popup-content h3 {
     margin-top: 0;
-    font-size: 16px;
+    font-size: 21.3px;        /* 16*1.333 */
     color: #555;
 }
+
 .leaflet-control.ruler {
-        position: absolute;
-        right: 10px;
-        left: auto;
-        top: auto;
-      }
-      * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Arial", sans-serif;
-        }
+    position: absolute;
+    right: 13.3px;            /* 10*1.333 */
+    left: auto;
+    top: auto;
+}
 
-        body {
-            background: #f0f0f0;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
 
-        /* Стили меню */
+body {
+    background: #f0f0f0;
+}
+
+/* Стили меню */
 #passwordContainer {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #252b36; /* Градиент синего */
+    background: #252b36;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -465,37 +466,40 @@ button#alert-button {
 }
 
 #passwordContainer img {
-    width: 125px;
+    width: 166.7px;           /* 125*1.333 */
     height: auto;
 }
 
 #loginInput, #passwordInput {
-    padding: 10px 7.5px;     /* 20px 15px */
-    font-size: 7px;          /* 14px */
-    width: 200px;            /* 400px */
-    height: 15px;            /* 30px */
+    padding: 13.3px 10px;     /* 10*1.333, 7.5*1.333 */
+    font-size: 9.3px;         /* 7*1.333 */
+    width: 266.7px;           /* 200*1.333 */
+    height: 20px;             /* 15*1.333 */
     border: none;
-    border-radius: 2px;      /* Было 4px, делим на 2 */
+    border-radius: 2.7px;     /* 2*1.333 */
     background-color: #3d4558;
     color: #fff;
     text-align: left;
-    background-position: 7.5px center;  /* 15px /2 */
+    background-position: 10px center;  /* 7.5*1.333 */
     background-repeat: no-repeat;
-    background-size: 12.5px;             /* 25px /2 */
+    background-size: 16.7px;          /* 12.5*1.333 */
 }
 
 #loginInput::placeholder,
 #passwordInput::placeholder {
     color: #b0b3b8;
 }
+.leaflet-popup-content-wrapper {
+    zoom: 0.5; /* примерно 0.5 * (150/200) */
+}
 
 #submitButton {
-    padding: 6px 20px;       /* 12px 40px */
-    font-size: 7px;          /* 14px */
+    padding: 8px 26.7px;      /* 6*1.333, 20*1.333 */
+    font-size: 9.3px;         /* 7*1.333 */
     background-color: #4674dc;
     color: white;
     border: none;
-    cursor: pointer;    
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     border-radius: 0px;
 }
@@ -511,26 +515,26 @@ button#alert-button {
 
 #menu-icon {
     position: absolute;
-    top: 8.5px;      /* 17px */
-    left: 10px;      /* 20px */
-    width: 85px;     /* 170px */
-    height: 12.5px;  /* 25px */
+    top: 11.3px;              /* 8.5*1.333 */
+    left: 13.3px;             /* 10*1.333 */
+    width: 113.3px;           /* 85*1.333 */
+    height: 16.7px;           /* 12.5*1.333 */
 }
 
 .inputWrapper {
     display: flex;
     flex-direction: column;
-    gap: 5px;           /* 10px */
-    margin-bottom: 102.5px; /* 205px */
+    gap: 6.7px;               /* 5*1.333 */
+    margin-bottom: 136.3px;   /* 102.5*1.333 */
 }
 
 .custom-menu {
     position: absolute;
-    bottom: 16px;      /* 20px */
-    right: 10px;       /* 20px */
+    bottom: 21.3px;           /* 16*1.333 */
+    right: 13.3px;            /* 10*1.333 */
     display: flex;
     flex-direction: column;
-    gap: 10px;         /* 20px */
+    gap: 13.3px;              /* 10*1.333 */
     z-index: 1000;
 }
 
@@ -538,73 +542,68 @@ button#alert-button {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 3px;          /* 6px */
+    gap: 4px;                 /* 3*1.333 */
     justify-content: flex-start;
 }
 
-
 .custom-button {
-  width: 19px;        /* 37 / 2 */
-  height: 15px;         /* 28 / 2 */
+    width: 25.3px;            /* 19*1.333 */
+    height: 20px;             /* 15*1.333 */
     background-color: rgb(101, 101, 101);
-  border-radius: 1.5px;   /* 2 / 2 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: default;
+    border-radius: 2px;       /* 1.5*1.333 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
 }
 
 .custom-button img {
-  width: 12.5px;        /* 25 / 2 */
-  height: 12.5px;       /* 25 / 2 */
+    width: 16.7px;            /* 12.5*1.333 */
+    height: 16.7px;           /* 12.5*1.333 */
 }
 
-.custom-button.green {
-    background-color: rgb(101, 101, 101);
-}
 #left-arrow-button {
-  width: 19px;             /* такой же размер, как у alert-button */
-  height: 15px;
-  background-color: rgb(101, 101, 101); /* можно поменять цвет */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-}
-#left-arrow-button img {
-  width: 11px;   /* иконка подогнана под размер */
-  height: 11px;
-}
-#warning-message {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 12.5px;       /* 25 / 2 */
-  background-color: rgba(0, 0, 0, 0.8);
-  color: rgb(255, 0, 68);
-  text-align: center;
-  padding: 2.5px;       /* 5 / 2 */
-  font-size: 7px;       /* 14 / 2 */
-  z-index: 9999;
+    width: 25.3px;            /* 19*1.333 */
+    height: 20px;             /* 15*1.333 */
+    background-color: rgb(101, 101, 101);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    cursor: pointer;
 }
 
-.hidden {
-  display: none;
+#left-arrow-button img {
+    width: 14.7px;            /* 11*1.333 */
+    height: 14.7px;           /* 11*1.333 */
+}
+
+#warning-message {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 16.7px;           /* 12.5*1.333 */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 0, 68);
+    text-align: center;
+    padding: 3.3px;           /* 2.5*1.333 */
+    font-size: 9.3px;         /* 7*1.333 */
+    z-index: 9999;
 }
 
 .menu-text {
-  position: fixed;     /* фиксируем текст на экране */
-  right: 10px;         /* совпадает с меню */
-  bottom: 4px;           /* текст внизу */
-  font-size: 8px;
-  color: rgba(0,0,0,0.3);
-  line-height: 1;
-  text-align: right;
-  margin-bottom: 0;
-  padding-top: 3px;    /* этот padding создаёт промежуток сверху от кнопок */
+    position: fixed;
+    right: 13.3px;            /* 10*1.333 */
+    bottom: 5.3px;            /* 4*1.333 */
+    font-size: 10.7px;        /* 8*1.333 */
+    color: rgba(0,0,0,0.3);
+    line-height: 1;
+    text-align: right;
+    margin-bottom: 0;
+    padding-top: 4px;         /* 3*1.333 */
 }
+
     </style>
 </head>
 <body>
@@ -625,7 +624,7 @@ button#alert-button {
   <!-- Меню в правом нижнем углу -->
   <div class="custom-menu">
     <div class="menu-row">
-            <div style="width: 59px;"></div>
+            <div style="width: 66.1px;"></div>
       <div class="custom-button">
         <img src="reload.png" alt="Reload" />
       </div>
@@ -634,25 +633,25 @@ button#alert-button {
       </div>
     </div>
     <div class="menu-row">
-      <div style="width: 81px;"></div>
+      <div style="width: 95.5px;"></div>
       <div class="custom-button">
         <img src="signal.png" alt="Signal" />
       </div>
     </div>
     <div class="menu-row">
-      <div style="width: 81px;"></div>
+      <div style="width: 95.5px;"></div>
       <div class="custom-button">
         <img src="ugol.png" alt="Arrow" />
       </div>
     </div>
     <div class="menu-row">
-      <div style="width: 81px;"></div>
+      <div style="width: 95.5px;"></div>
       <div class="custom-button">
         <img src="pryamougol.png" alt="Layer" />
       </div>
     </div>
     <div class="menu-row">
-      <div style="width: 81px;"></div>
+      <div style="width: 95.5px;"></div>
       <div class="custom-button green">
         <img src="plus.png" alt="Plus" />
       </div>
@@ -861,6 +860,7 @@ googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}'
 
 googleTerrain = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}',{
         maxZoom: 20,
+            className: 'map-tiles', // Класс, на который будет действовать фильтр
         subdomains:['mt0','mt1','mt2','mt3']
 });
 var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
@@ -883,7 +883,7 @@ var Stadia_OSMBright = L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_brigh
 });
 
 // Добавляем стандартную карту по умолчанию
-osmLayer.addTo(map);
+googleHybrid.addTo(map);
 
 // Настройка слоев для переключения
 const baseLayers = {
@@ -1055,7 +1055,7 @@ updateOverlayFilter();
                 // Get target input via modal
                 showTargetModal((targetLat, targetLng) => {
 
-            const objectId = generateId();
+                      const objectId = generateId();
             let iconUrl;
             let iconClass = 'red-id';
             let shiftedClass = ''
@@ -1090,11 +1090,11 @@ updateOverlayFilter();
     // Условия для выбора иконки в зависимости от скорости
     if (speed >= 120 && speed <= 121) {
         iconUrl = 'supercam.png';
-    } else if (speed > 120 && speed <= 200) {
+} else if (speed > 120 && speed <= 200) {
     // Генерируем случайное число от 0 до 1
     const random = Math.random(); // число от 0 до 1
 
-    if (random < 0.6) {
+    if (random < 0.35) {
         // 80% шанс
         iconUrl = 'neyst tip.png';
     } else {
@@ -1227,6 +1227,8 @@ updateOverlayFilter();
     } else if (speed >= 1110 && speed <= 1111) {
         iconUrl = 'mirage.png';
         iconClass = 'blue-id';  
+    } else if (speed >= 300 && speed <= 301) {
+        iconUrl = 'bplaper.png';
     } else {
         // Если скорость не попала ни в одно условие, ставим "neyst tip.png"
         iconUrl = 'neyst tip.png';
@@ -1245,6 +1247,7 @@ updateOverlayFilter();
   iconHtml = `
     <div class="icon-container ${iconClass}">
       <img src="${iconUrl}" class="icon" />
+                          <span class="r-container ${iconClass}">ПП</span>
     </div>
   `;
       icon = L.divIcon({
@@ -1259,6 +1262,7 @@ updateOverlayFilter();
     iconHtml = `
         <div class="icon-container ${iconClass}">
             <img src="${iconUrl}" class="icon" />
+                                <span class="r-container ${iconClass}">ЗЛ</span>
         </div>
     `;
               icon = L.divIcon({
@@ -1273,6 +1277,7 @@ updateOverlayFilter();
   iconHtml = `
     <div class="icon-container ${iconClass}">
       <img src="${iconUrl}" class="icon" />
+                    <span class="r-container ${iconClass}">СВ</span>
     </div>
   `;
           icon = L.divIcon({
@@ -1299,6 +1304,7 @@ const randomNumber = Math.floor(Math.random() * 200) + 1;
     iconHtml = `
         <div class="icon-container ${iconClass}">
             <img src="${iconUrl}" class="icon" />
+                                <span class="r-container ${iconClass}">ПП</span>
         </div>
     `;
         icon = L.divIcon({
@@ -1317,7 +1323,7 @@ setInterval(() => {
     const el = document.getElementById('warning-message');
     
     // бросаем "монетку": 0 или 1
-    const show = Math.random() < 0.5;
+    const show = Math.random() < 0.35;
 
     if (show) {
         el.classList.remove('hidden'); // показать
@@ -1797,7 +1803,7 @@ fetch('trevoga.json')
                 let region = checkbox.id;
                 if (checkbox.checked && regions[region]) {
                     let layer = L.geoJSON(regions[region], {
-                        style: { color: 'red', fillColor: 'red', fillOpacity: 0.1, weight: 0.3 }
+                        style: { color: 'red', fillColor: 'red', fillOpacity: 0.13, weight: 0.3 }
                     }).addTo(map);
                     polygons[region] = layer;
                 } else if (polygons[region]) {
@@ -1850,7 +1856,7 @@ function getNextObjectId() {
             <img src="${iconUrl}" class="icon" />
             <div class="info-container ${shiftedClass}">
                 <span class="label-container ${iconClass}">${objectId} ${minskTime}</span>
-                <span class="r-container ${iconClass}">ЕПВО</span>
+                <span class="rl-container ${iconClass}">ЕПВО</span>
             </div>
         </div>
     `;
@@ -1875,6 +1881,20 @@ function getNextLitakId() {
     // Проверяем каждые 500 мс
     setInterval(updateAlertCount, 500);
     updateAlertCount();
+     // Загрузка GeoJSON файла
+    // Загружаем ОККУПИРОВАННЫЕ территории
+    // Загружаем ЛИНИЮ фронта
+    fetch('line.json')
+      .then(res => res.json())
+      .then(data => {
+        L.geoJSON(data, {
+          style: {
+            color: 'red',
+            weight: 1,
+            fill: false
+          }
+        }).addTo(map);
+      })
     </script>
 </body>
 </html>
