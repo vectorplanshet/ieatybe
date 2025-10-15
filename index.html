@@ -128,11 +128,10 @@ input[type="text"] {
     --map-tiles-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.5) brightness(0.7) grayscale(3);
 }
 
-@media (prefers-color-scheme: dark) {
-    .map-tiles {
-        filter: var(--map-tiles-filter, none);
-    }
+.map-tiles {
+    filter: var(--map-tiles-filter, none);
 }
+
 
 
 .modal-button:hover {
@@ -903,6 +902,15 @@ const baseLayers = {
 
 // Добавляем контрол для переключения карт
 L.control.layers(baseLayers).addTo(map);
+map.on('baselayerchange', function (e) {
+    const mapContainer = document.querySelector('.leaflet-container');
+
+    if (e.name === 'OSM Gray' || e.name === 'Google Terrain') {
+        mapContainer.classList.add('dark-map');
+    } else {
+        mapContainer.classList.remove('dark-map');
+    }
+});
 
 // Функция для изменения фильтра на изображении
 function updateOverlayFilter() {
@@ -1895,6 +1903,7 @@ function getNextLitakId() {
           }
         }).addTo(map);
       })
+
     </script>
 </body>
 </html>
