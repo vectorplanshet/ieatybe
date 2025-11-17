@@ -1752,6 +1752,42 @@ fetch('districts.geojson')
       if (!districtsByRegion[region]) districtsByRegion[region] = [];
       districtsByRegion[region].push(feature);
     });
+// === ВСЕГДА подсвечиваем ЛУГАНСКУЮ ОБЛАСТЬ через trevoga.json ===
+fetch('trevoga.json')
+  .then(r => r.json())
+  .then(trevogaData => {
+
+    trevogaData.features.forEach(feature => {
+
+      // Ищем "Луганская область" в любых свойствах
+      const props = feature.properties;
+      const isLugansk = Object.values(props).some(v => 
+        typeof v === 'string' && v.trim().toLowerCase() === 'луганская область'
+      );
+
+      if (isLugansk) {
+
+        const layer = L.geoJSON(feature, {
+          style: {
+            color: 'red',
+            fillColor: 'red',
+            fillOpacity: 0.13,
+            weight: 0.3
+          }
+        }).addTo(map);
+
+        const districtName =
+          props.ADMIN_2 ||
+          props.name ||
+          props.region ||
+          'Луганская область';
+
+        polygons[districtName] = layer;
+        activeDistricts[districtName] = true;
+      }
+    });
+  });
+
 
     document.querySelectorAll('#alert-menu input[type=checkbox]').forEach(checkbox => {
       const region = checkbox.id;
@@ -1773,11 +1809,12 @@ fetch('districts.geojson')
           const kyivData = await fetch('Kyiv.json').then(r => r.json());
           const kyivLayer = L.geoJSON(kyivData, {
             style: {
-                  color: 'red',
-                    fillColor: 'red',
-                    fillOpacity: 0.13,
-                    weight: 0.2
-            }
+  color: 'red',
+  fillColor: 'red',
+  fillOpacity: 0.13,
+  weight: 0.3
+}
+
           }).addTo(map);
 
           polygons['Kyiv'] = kyivLayer;
